@@ -1,4 +1,4 @@
-# Tutorial：RISC-V环境下的KVM虚拟化
+# Tutorial：RISC-V环境下的QEMU/KVM虚拟化
 
 <!--ts-->
 <!--te-->

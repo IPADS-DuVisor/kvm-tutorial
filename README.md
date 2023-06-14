@@ -57,10 +57,17 @@ cd rv-emul-qemu
 git submodule init
 git submodule update --recursive
 
-# 此步骤需要主机环境中有一系列RISCV64架构的库，建议参考链接https://wiki.debian.org/Multiarch/HOWTO
 ./configure --target-list="riscv32-softmmu riscv64-softmmu" --cross-prefix=riscv64-linux-gnu-
 make
 cd ..
+```
+
+此步骤还需要主机环境中有一系列RISCV64架构的库，建议参考链接https://wiki.debian.org/Multiarch/HOWTO
+
+配置成功后应当可以成功进行如下安装:
+```
+sudo apt-get install libpixman-1-dev:riscv64
+sudo apt-get install libglib2.0-dev:riscv64
 ```
 
 #### 构建Host Linux

@@ -45,7 +45,7 @@ https://github.com/riscv-collab/riscv-gnu-toolchain
 安装依赖：https://wiki.qemu.org/Hosts/Linux
 
 ```bash
-sudo apt-get install git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build
+sudo apt-get install git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build gcc-riscv64-linux-gnu pkg-config-riscv64-linux-gnu
 ```
 
 从源码编译QEMU：
@@ -56,7 +56,9 @@ git clone https://gitlab.com/qemu-project/qemu.git rv-emul-qemu
 cd rv-emul-qemu
 git submodule init
 git submodule update --recursive
-./configure --target-list="riscv32-softmmu riscv64-softmmu"
+
+# 此步骤需要主机环境中有一系列RISCV64架构的库，建议参考链接https://wiki.debian.org/Multiarch/HOWTO
+./configure --target-list="riscv32-softmmu riscv64-softmmu" --cross-prefix=riscv64-linux-gnu-
 make
 cd ..
 ```

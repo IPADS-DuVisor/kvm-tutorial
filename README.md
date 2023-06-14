@@ -56,13 +56,12 @@ git clone https://gitlab.com/qemu-project/qemu.git rv-emul-qemu
 cd rv-emul-qemu
 git submodule init
 git submodule update --recursive
-
 ./configure --target-list="riscv32-softmmu riscv64-softmmu" --cross-prefix=riscv64-linux-gnu-
 make
 cd ..
 ```
 
-此步骤还需要主机环境中有一系列RISCV64架构的库，建议参考链接https://wiki.debian.org/Multiarch/HOWTO
+在./configure这步根据每个人主机环境不同，可能还需要主机环境中有一系列RISCV64架构的基础库，建议参考链接https://wiki.debian.org/Multiarch/HOWTO
 
 配置成功后应当可以成功进行如下安装:
 ```
